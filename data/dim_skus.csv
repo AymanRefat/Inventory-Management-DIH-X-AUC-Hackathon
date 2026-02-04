@@ -1,0 +1,5 @@
+"id","user_id","created","updated","stock_category_id","item_id","title","quantity","low_stock_threshold","type","unit"
+1,424,1744481238,1744481238,1,66679,Fritz Kola,10.0,10.0,normal,pcs
+2,424,1744481571,1744481571,2,,Tomat,5.7,10.0,normal,kg
+3,424,1744481596,1744481596,2,,Agurk,-10.5,2.0,normal,kg
+4,424,1744481634,1744481634,3,59913,Potatos,0.0,10.0,composite,pcs

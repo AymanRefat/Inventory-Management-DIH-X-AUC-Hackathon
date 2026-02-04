@@ -1,0 +1,12 @@
+venv/
+__pycache__/
+*.pyc
+db.sqlite3
+.DS_Store
+.idea/
+.vscode/
+
+data/fct_cash_balances.csv
+data/fct_order_items.csv
+
+data/fct_orders.csv
