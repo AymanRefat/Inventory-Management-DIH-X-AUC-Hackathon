@@ -37,13 +37,25 @@ pip install -r requirements.txt
 python manage.py migrate
 ```
 
-### 4. Data Loading (Crucial Step)
-This project comes with a dataset of 19 CSV files. To populate the database with the initial data (users, products, orders, etc.), run:
+## 🧠 AI Features
+
+### Demand Forecasting
+The system uses Prophet (by Meta) to predict future demand for items based on historical sales data.
+
+**Key Capabilities:**
+- **Item-Level Predictions:** Forecast demand for specific products (e.g., "Cappuccino" vs "Latte")
+- **Historical Analysis:** Learns from years of sales data
+- **Confidence Intervals:** Provides 80% and 95% confidence bounds (best case/worst case)
+- **Interactive Dashboard:** visualize trends and future demand
+
+### 4. Data Loading
+To populate the database with the provided CSV dataset:
 
 ```bash
-python manage.py load_initial_data
+# Load all data (places, items, orders, order items)
+python manage.py load_csv_data --all --batch-size 10000
 ```
-*Note: This process may take a few minutes as it processes thousands of order items.*
+*Note: This processes ~400k orders and ~600k items, so it may take a few minutes.*
 
 ### 5. Create Admin User
 To access the admin interface:
@@ -52,10 +64,18 @@ To access the admin interface:
 python manage.py createsuperuser
 ```
 
-### 6. Run Server
+### 6. Run Server & Dashboard
 
 ```bash
 python manage.py runserver
 ```
 
-Access the admin panel at: http://127.0.0.1:8000/admin/
+- **Admin Panel:** http://127.0.0.1:8000/admin/
+- **Forecast Dashboard:** http://127.0.0.1:8000/forecast/
+
+## 📊 Using the Dashboard
+1. Go to `/forecast/`
+2. Select a **Location** (e.g., "Kaffestuen Vesterbro")
+3. (Optional) Select a specific **Item** to forecast
+4. Click **"Generate Forecast"**
+5. View the predicted demand graph and detailed table below
